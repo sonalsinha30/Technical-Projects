@@ -4,7 +4,8 @@ def lambda_handler(event, context):
     
         #fetch accountID, region and log group name
         logGroupName = event['detail']['requestParameters']['logGroupName']
-        
+
+        # set retentionPeriod variable as oer preferred no. of days
         retentionPeriod = 7
 
         cwClient = boto3.client('logs')
