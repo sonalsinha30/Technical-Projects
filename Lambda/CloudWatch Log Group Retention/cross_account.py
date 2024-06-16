@@ -10,6 +10,8 @@ def lambda_handler(event, context):
         #set retention period for prod and non-prod accounts
         prodAccounts = ['123456789']
         nonprodAccounts = ['987654321']
+
+        # set retentionPeriod variable as oer preferred no. of days
         if accountId in prodAccounts:
             retentionPeriod = 14
         else:
