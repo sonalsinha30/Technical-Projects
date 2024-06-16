@@ -15,7 +15,7 @@ def lambda_handler(event, context):
         else:
             retentionPeriod = 7
         
-        #generate temporary credentials to assume cross account role
+        #generate temporary credentials to assume cross account role (assuming that the role CW-ExecutionRole is already present in the traget account)
         stsClient = boto3.client('sts')
         stsResponse = stsClient.assume_role( 
             RoleArn=f'arn:aws:iam::{accountId}:role/CW-ExecutionRole', 
